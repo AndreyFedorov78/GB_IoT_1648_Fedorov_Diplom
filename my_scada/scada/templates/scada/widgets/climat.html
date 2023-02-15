@@ -1,0 +1,17 @@
+{% verbatim %}
+
+    <span v-for="sensor, index in item.data">
+        <div v-if="sensor.type.units =='С'" class="weather">
+            <span> {{ sensor.data/sensor.type.divider  }} С</span>
+            <span> o</span>
+        </div>
+        <div v-else class="weatherEx">
+          {{ sensor.type.title }}: <b>{{ sensor.data /sensor.type.divider }} {{ sensor.type.units }}</b>
+        </div>
+
+
+    </span>
+    <br><br>
+
+
+{% endverbatim %}

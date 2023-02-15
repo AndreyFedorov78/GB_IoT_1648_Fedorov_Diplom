@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Andrey Fedorov">
+    <title>My scada</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bs/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicons -->
+    <meta name="theme-color" content="#7952b3">
+    <link href="/static/css/scada.css" rel="stylesheet">
+
+</head>
+<body class="" style="">
+
+{% verbatim %}
+
+
+<mai class=" ml-sm-auto  px-md-4 " id="app">
+
+
+    <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+         style="display: flex; padding-right: 20px; padding-left: 20px; margin-top: 0; padding-top: 0;">
+        <img src="/static/img/logo-2.png" style="width: 150px">
+
+
+        <div>
+            <button v-on:click="exit()" class="menu_item">выход</button>
+
+            <div class="dropdown">
+                <button class="dropbtn">виджеты</button>
+                <div class="dropdown-content">
+
+                    <div v-for="i in widgets_new">
+                        <a href="##" v-on:click="add_widget(i.id)">{{i.title}} </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок отображения данных-->
+    <div class="app"> <!-- оласть приложениея vue -->
+
+
+        <div class="card-deck row">
+
+            <!-- Окна с виджетами -->
+            <div v-on:dblclick="details(item.id)" class="card" v-for="item in widgets_list">
+                <!--заголовок окна-->
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <div class="close"></div>
+                        <div class="control_buttons">
+                            <a href="##" v-on:click="delete_widget(item.id)">x</a>
+                            <div></div>
+                            <a href="##" v-on:click="move_widget(item.id, -1)"> <</a>
+                            <div></div>
+                            <a href="##" v-on:click="move_widget(item.id, 1)">></a>
+                        </div>
+
+                        <div v-if="item.online" class="online">online</div>
+                        <div v-else class="online text-danger alarm">offline {{ item.date }}</div>
+
+                        <input v-on:focusout="title_edit(item.id)" v-on:keyup.enter="title_edit(item.id)"
+                               v-on:keyup.esc="load_last()" v-model='item.title'/>
+
+                    </h4>
+                </div>
+
+                <!--Содержимое -->
+
+                {% endverbatim %} <!-- предаем рендеринг обратно в Django-->
+                {% for widget in widgets %} <!-- идем по всем доступным виджетам-->
+                    {% verbatim %}
+                    <!-- силами vue показываем тот виджет на который ссылается текущий элемент при рендеренге силами vue -->
+
+                    <span v-if="item.sensor.widget.id == {%endverbatim %} {{ widget.id }} {% verbatim %} ">
+
+                                {% endverbatim %} {% include widget.filename %} <!-- вставляем виджет-->
+                            </span>
+                {% endfor %}
+                {% verbatim %}
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    </main>
+
+    <div v-show="show_details" class="details_container">
+
+        <div class="details">
+            <a v-on:click="details_clear()" href="##">X</a>
+
+            <h3>{{ detail.title }}</h3>
+
+
+            <div class="details_chart" v-for="sensor in detail.sensors">
+                <br>
+
+                <canvas :id="sensor.type.id"></canvas>
+
+
+                <br><br>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    {% endverbatim %}
+
+    <script src="/static/js/chart.js"></script>
+
+    <script> const csrf_token = "{{csrf_token}}"</script>
+    <script src="/static/js/vue.min.js"></script>
+    <script src="/static/js/scada.js"></script>
+    <div class="sensor_add">
+        <div v-for="i in widgets_new" v-on:click="add_widget(i.id)"><a href="##">{{ i.title }}</a></div>
+
+    </div>
+
+
+    <br><br><br>
+</body>
+</html>
+
+

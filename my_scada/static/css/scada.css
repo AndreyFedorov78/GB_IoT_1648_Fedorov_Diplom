@@ -1,0 +1,472 @@
+/*
+После свойств margin и padding в CSS идут 4 числа, задающие значения для отступов (в пикселях, процентах или других единицах измерения), поочередно указывающих значение для каждой из четырех сторон элемента в следующем порядке:
+Верхнее отступ (top)
+Правое отступ (right)
+Нижнее отступ (bottom)
+Левое отступ (left)
+
+Если вы задаете только два значения, то это будет означать:
+Первое значение определяет верхний и нижний отступы
+Второе значение определяет правый и левый отступы
+*/
+
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+html {
+  font-size: 14px;
+   height: 100%;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+body {
+     background-image: url(/static/img/bg.png);
+     justify-content: center; /* выравнивание по горизонтали */
+     min-height: 100vh;
+}
+
+.app {
+     justify-content: center; /* выравнивание по горизонтали */
+      height: 100%;
+}
+
+
+
+/*    ***************************   */
+
+/* Dropdown Button */
+.dropbtn {
+   background-color : #00FF00;
+   width: 100px;
+   height: 25px;
+   padding: 0px 0px 0px;
+   opacity: 0.85;
+   font-size: .7em;
+   font-weight: 800;
+   justify-content: center; /* выравнивание по горизонтали */
+   align-items: center; /* выравнивание по вертикали */
+       box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.75),
+    10px 20px 20px rgba(0, 0, 0, 0.25);
+   border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 100px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.75),
+    10px 20px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    font-size: .6em;
+    font-weight: 800;
+    color: black;
+    padding: 3px 3px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+/*    ***************************   */
+
+
+.menu_item  {
+   background : #00FF00;
+   width: 100px;
+   height: 25px;
+   padding: 0px 0px 0px;
+   margin-bottom: 8px;
+   border: none;
+   display: flex;
+   opacity: 0.85;
+   font-size: .7em;
+   font-weight: 800;
+   justify-content: center; /* выравнивание по горизонтали */
+   align-items: center; /* выравнивание по вертикали */
+       box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.75),
+    10px 20px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.menu_item:hover  {background-color: #3e8e41;}
+
+
+
+
+.card-deck {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+}
+
+.card {
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.75),
+    10px 50px 70px rgba(0, 0, 0, 0.25);
+    margin: 20px 15px 20px;
+    max-width: 400px;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 350px;
+    /*padding: 2px 20px 30px;*/
+}
+
+
+.vent-tab{
+   border-radius= 30px;
+}
+
+
+
+.card-header input{
+    width: 100%;
+    color: #00cc03;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    background: rgba( 0,0,0,0);
+    display: block;
+    border: none;
+    margin:0 auto;
+    padding:0 auto;
+    text-align: center;
+    outline:none;
+}
+
+.card-header input:focus {
+
+     border: none;
+    background: rgba( 0,0,0,0);
+  }
+
+
+
+.card-header{
+    width: 100%;
+    color: #00cc03;
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 0.1em;
+    display: flex;
+    justify-content: center; /* выравнивание по горизонтали */
+    align-items: center; /* выравнивание по вертикали */
+}
+
+.online{
+   font-size: 0.5em;
+   position: absolute;
+   left: 5px;
+   top: 30px;
+   display: flex;
+}
+
+.online a{
+   color: #dc3545;
+}
+
+.online a:hover{
+    text-decoration: none;
+}
+
+.control_buttons {
+    display: flex;
+    font-size: 0.4em;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.control_buttons div {
+  width: 4px;
+}
+
+
+.control_buttons a {
+    background-color: #007bff;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-weight: 800;
+    margin: 0 0 0;
+    padding: 1 0 0;
+    width: 1.4em;
+    height: 1.4em;
+    justify-content: center; /* выравнивание по горизонтали */
+    align-items: center; /* выравнивание по вертикали */
+}
+
+
+.control_buttons a:nth-child(1)  {
+    background-color: #dc3545;
+}
+
+.control_buttons a:hover{
+   transform: scale(1.5,1.5);
+    text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+
+.kolodec {
+    width: 350px;
+    position: relative;
+    opacity: .8;
+}
+
+.water-back {
+    background: #000000;
+    opacity: .3;
+    position: absolute;
+    bottom: 70px;
+    left: 90px;
+    width: 160px;
+    height: 120px;
+}
+
+.water-show {
+    color: #04fc43;
+    font-size: 4em;
+    font-weight: 600;
+    width: 190px;
+    position: absolute;
+    bottom: 100px;
+    left: 78px;
+}
+
+.weather {
+    align-items: top;
+    margin-top: 0px;
+    width: 20em;
+
+}
+
+.weather span {
+    color: #007bff;
+}
+.weather span:nth-child(1) {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.weather span:nth-child(2) {
+    font-size: 2em;
+    font-weight: 600;
+    top: -10;
+    position: absolute;
+}
+
+.weatherEx {
+    margin-top: 15px;
+    opacity: 1;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #000000;
+}
+
+.weatherEx span {
+    margin: 10px 30px 10px;
+}
+
+
+.alarm {
+   animation: animate 0.5s steps(1) infinite;
+   color: #fe0000;
+}
+
+
+@keyframes animate
+{
+ 0%
+  {
+    opacity: 1;
+  }
+ 50%
+  {
+    opacity: 0;
+  }
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+
+.pool_common {
+  display: flex;
+  justify-content: center; /* выравнивание по горизонтали */
+  align-items: center; /* выравнивание по вертикали */
+
+}
+.pool_img {
+    opacity: .7;
+    align-items: top;
+    margin-top: 20px;
+    width: 20em;
+
+}
+
+
+
+
+
+.pool {
+    top: 4em;
+    left: 0px;
+    position: absolute;
+    align-items: top;
+    margin-top: 0px;
+    width: 100%;
+
+}
+
+
+
+.pool span {
+    color: #007bff;
+}
+.pool span:nth-child(1) {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.pool span:nth-child(2) {
+    font-size: 2em;
+    font-weight: 600;
+    top: -10;
+    position: absolute;
+}
+
+
+/* модальное окно с деталями */
+
+.details_container {
+    -webkit-appearance: none;
+    position: absolute!important;
+    top: 0px;
+    width: 100vw;
+    z-index: 9999;
+    display: block;
+    transform: translate3d(0,0,0);
+}
+
+
+
+.details {
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    margin: 8em 5em;
+
+}
+
+.details a {
+
+    color: #FF0000;
+
+    margin-left: auto;
+    margin-right: 1em;
+    margin-top: 1em;
+    right: 5px;
+    top: 5px;
+    border: solid 3px #ff0000;
+    width: 20px;
+    height:20px;
+    display:flex;
+    font-weight: 10000;
+    border-radius: 50%;
+    justify-content: center; /* выравнивание по горизонтали */
+    align-items: center; /* выравнивание по вертикали */
+
+
+}
+
+
+.details_chart {
+/* max-width: 700px;*/
+    padding: 1em 10em;
+
+
+ }
+
+ /*  20 октября 2022года блок добавлениия датчиков*/
+ .add_sensor_block {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 25px 35px rgba(0,0,0,0.1);
+    display: flex;
+    justify: space-between;
+ }
+
+ .add_sensor_block .add_symbol {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    font-weight: 800;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+  .add_sensor_block .sensors_head {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #f00;
+ }
+
+
+
+ /*   Графики  */
+
+.chart_list {
+  width: 50%;
+  margin: auto;
+
+
+}
+
+
