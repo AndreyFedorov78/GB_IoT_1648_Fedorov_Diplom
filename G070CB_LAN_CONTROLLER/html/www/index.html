@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--0x0801B000-->
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>TL_Gate PAGE</title>
+    <link href="index.css" rel=" stylesheet" type=" text/css">
+</head>
+<body id="body_id">
+<div class="logo">
+    <span>Т</span><span>Я</span><span>П</span> <span>Л</span><span>Я</span><span>П</span> <span>devices</span>
+</div>
+<div hidden class="menu" id="menu">
+    <div class="menu_item" id="m_item_1" onclick="menu_item_(1)">settings</div>
+    <div class="menu_item" id="m_item_2" onclick="menu_item_(2)">log console</div>
+    <div class="menu_item" id="m_item_6" onclick="menu_item_(6)">modbus commands</div>
+    <div class="menu_item" id="m_item_3" onclick="menu_item_(3)">change password</div>
+    <div class="menu_item" id="m_item_5" onclick="menu_item_(5)">logout</div>
+    <div class="menu_item" id="m_item_4" onclick="menu_item_(4)">reboot</div>
+</div>
+
+<div class="container">
+    <br><br>
+    <form hidden id="form_id" action="form.cgi" method="get">
+        <table>
+            <tr>
+                <td><label>MQTT server: </label></td>
+                <td><input class="text_input" name="mqtt_address" id="mqtt_address" value=""></td>
+            </tr>
+            <tr>
+                <td><label>MQTT port: </label></td>
+                <td><input class="text_input" name="mqtt_port" id="mqtt_port" value=""></td>
+
+            </tr>
+            <tr>
+                <td><label>MQTT topic: </label></td>
+                <td><input class="text_input" name="mqtt_topic" id="mqtt_topic" value=""></td>
+            </tr>
+            <tr>
+                <td><label>MQTT login: </label></td>
+                <td><input class="text_input" name="mqtt_name" id="mqtt_name" value=""></td>
+            </tr>
+            <tr>
+                <td><label>MQTT passsword: </label></td>
+                <td><input type="password" class="text_input" name="mqtt_password" id="mqtt_password" value=""></td>
+            </tr>
+            <tr>
+                <td><label>Scada server: </label></td>
+                <td><input class="text_input" id="scada_address" name="scada_address" value=""></td>
+            </tr>
+            <tr>
+            <td><label>ModBus speed: </label></td>
+            <td><input  class="text_input" name="modbus_speed" id="modbus_speed" value=""></td>
+        </tr>
+            <tr>
+                <td><label>Device mac address:</label></td>
+                <td><input class="text_input" name="device_mac_address" id="device_mac_address" value=""></td>
+            </tr>
+
+
+        </table>
+        <br><br>
+        <button type="button" onclick="send_form_()">save</button>
+    </form>
+    <form id="login_id" name="login_id" class="login_id">
+        <table>
+            <tr>
+                <td><label>Login: </label></td>
+                <td><input class="text_input" name="login" id="login" value=""></td>
+            </tr>
+            <tr>
+                <td><label>Password </label></td>
+                <td><input class="text_input" name="password" type="password" id="password" value=""></td>
+            </tr>
+        </table>
+        <br><br>
+        <button type="button" onclick="login_()">login</button>
+    </form>
+
+    <div class="modbus_window" id="modbus_window">
+        <h1>ModBUS</h1>
+        <div id="modbusArea" class="modbus"></div>
+        <br>
+        <textarea id="modbus_log_area" readonly>    </textarea><br>
+    </div>
+    <form id="log_console" name="log_console" class="log_console">
+        <div> LOG CONSOLE </div>
+        <textarea id="log_area" readonly>    </textarea><br>
+        <a href="##" onclick="$('log_area').value=''">clear console</a>
+        <a href="##" onclick="showDebbug()">[debug info]</a>
+    </form>
+<div class="changePassword" id="changePassword">
+    <form id="login_change" name="login_change">
+        <table>
+            <tr>
+                <td><label>New login: </label></td>
+                <td><input class="text_input" name="login_new" id="login_new" value=""></td>
+            </tr>
+            <tr>
+                <td><label>New password </label></td>
+                <td><input class="text_input" name="password_new" id="password_new" value=""></td>
+            </tr>
+        </table>
+        <br>
+          <button type="button" onclick="login_change_(true)">Save</button>
+    </form>
+</div>
+    <div id="ok_id" class="card ok_block">
+        <center>
+            SAVED
+        </center>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

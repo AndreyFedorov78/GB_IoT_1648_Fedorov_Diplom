@@ -1,0 +1,381 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    min-height: 100vh;
+    font-size: 1.6em;
+}
+
+.logo {
+    padding: 0;
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    background: #0098d9;
+    height: 1.3em;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    font-size: .7em;
+    font-weight: bold;
+    text-align: center;
+    justify-content: left;
+    background: #0098d9;
+}
+
+.menu_item {
+    cursor: pointer;
+    background: #FFFFFF;
+    border: solid 1px #0b0650;
+    padding: 2px 5px 2px 5px;
+    margin: 3px 3px 0px 3px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+}
+
+
+.menu_item:first-child {
+    border-bottom: none;
+    margin-left: 20px;
+}
+
+.menu_item:last-child {
+    background: #FF0000;
+}
+
+.logo span:nth-child(1) {
+    color: #ff4400;
+    position: absolute;
+    left: 50%;
+    margin-left: -4.0em;
+    transform: rotate(-10deg);
+}
+
+.logo span:nth-child(2) {
+    color: #e1e100;
+    position: absolute;
+    left: 50%;
+    margin-left: -3.5em;
+    transform: rotate(5deg);
+}
+
+.logo span:nth-child(3) {
+    color: #00d27f;
+    position: absolute;
+    left: 50%;
+    margin-left: -2.8em;
+    transform: rotate(-15deg);
+}
+
+.logo span:nth-child(4) {
+    color: #06fe9e;
+    position: absolute;
+    left: 50%;
+    margin-left: -1.8em;
+    transform: rotate(8deg);
+}
+
+.logo span:nth-child(5) {
+    color: #c30dec;
+    position: absolute;
+    left: 50%;
+    margin-left: -1.2em;
+    transform: rotate(-15deg);
+}
+
+.logo span:nth-child(6) {
+    color: #c70085;
+    position: absolute;
+    left: 50%;
+    margin-left: -0.5em;
+    transform: rotate(10deg);
+}
+
+.logo span:nth-child(7) {
+    position: absolute;
+    left: 50%;
+    margin-left: 1em;
+}
+
+.container {
+    width: 100%;
+    border-top-width: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    border-color: #0098d9;
+    box-shadow: 0 10px 13px 0 rgba(42, 134, 243, .3), 0 0 13px 0 rgba(42, 134, 243, .18), 30px 30px 30px 0 rgba(0, 0, 0, .3);
+    padding: 60px 30px 30px 30px;
+    background-color: white;
+    border-radius: 5%;
+    margin: 40px 0 0 0;
+    text-align: center;
+}
+
+
+button {
+    width: 160px;
+    box-shadow: 0 10px 13px 0 rgba(42, 134, 243, .3), 0 0 13px 0 rgba(42, 134, 243, .18);
+    font-size: 1.1em;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+    display: inline-block;
+    border: 1px solid #0098d9;
+    margin: 15px;
+    box-sizing: border-box;
+    padding: 15px;
+    text-decoration: none;
+    background-color: white;
+    color: #0098d9;
+    border-radius: 0%;
+}
+
+.change_pass_button {
+    border-radius: 15px;
+    color: #0098d9;
+    background: white;
+    width: 360px;
+}
+
+.reboot {
+    background-color: #ff0000;
+}
+
+button:hover {
+    background-color: #124169;
+    color: #fff;
+    transition: all .2s ease-in 0s;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+td {
+    text-align: left;
+}
+
+
+.login_id {
+    transition-duration: 2s;
+    rotate: y 0deg;
+}
+
+.text_input {
+    height: 1em;
+    width: 245px;
+    margin: 10px;
+    background-color: #EEEFF1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+
+.changePassword {
+    position: relative;
+    display: none;
+    /*display: flex;*/
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.changePassword form {
+    border-color: #0098d9;
+    box-shadow: 0 10px 13px 0 rgba(42, 134, 243, .3), 0 0 13px 0 rgba(42, 134, 243, .18), 30px 30px 30px 0 rgba(0, 0, 0, .3);
+    padding: 60px 30px 30px 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.changePassword button {
+    background-color: white;
+    color: #0098d9;
+    border-radius: 0%;
+}
+
+.log_console {
+    border-radius: 20px;
+    padding: 0px;
+    display: none;
+}
+
+.log_console div:first-child {
+    background: #0098d9;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+    color: white;
+}
+
+.log_console a {
+    margin: 0px;
+    padding: 0px;
+    font-size: .6em;
+   place-self: flex-end;
+}
+
+.log_console textarea {
+    margin: 20px 20px 0px 20px;
+    background: black;
+    color: greenyellow;
+    height: 60vh;
+    width: 90vw;
+    font-size: 1em;
+    vertical-align: top;
+    font-weight: 400;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.modbus {
+    font-size: 0.7 em;
+    margin: 0;
+
+    padding: 10px;
+    justify-content: center;
+    vertical-align: center;
+
+}
+.modbus label {
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right:  0px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.modbus_window {
+
+    border-radius: 10px;
+    margin: 40px 0 0 0;
+    position: relative;
+    display: none;
+    padding: 1em 3em 1em 3em;
+    border: 1px solid #0098d9;
+    /*display: flex;*/
+    /*top: 0px;
+    width: 100%;
+    height: 100%;*/
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 13px 0 rgba(42, 134, 243, .3), 0 0 13px 0 rgba(42, 134, 243, .18), 30px 30px 30px 0 rgba(0, 0, 0, .3);
+    /*
+      border-color: #0098d9;
+    box-shadow: 0 10px 13px 0 rgba(42, 134, 243, .3), 0 0 13px 0 rgba(42, 134, 243, .18), 30px 30px 30px 0 rgba(0, 0, 0, .3);
+    padding: 60px 30px 30px 30px;
+    background-color: white;
+    border-radius: 5%;
+    margin: 40px 0 0 0;
+    text-align: center;
+    */
+
+
+}
+
+.modbus_window h1 {
+    font-size: 1em;
+}
+
+.modbus_window textarea {
+    margin: 0;
+    background: black;
+    color: greenyellow;
+    height: 20em;
+    padding: 5px;
+    width: 100%;
+    font-size: 0.8em;
+    vertical-align: top;
+    font-weight: 400;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /*
+    font-size: 1em;
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    height: 8em;
+
+     */
+}
+
+.modbus input {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0px;
+    font-size: .8em;
+    font-style: italic;
+    border: none;
+}
+
+.modbus td {padding: 1em 0em 0 0em; border-bottom: #125f9a 1px solid; text-align: left;}
+.modbus tr:first-child td {font-size: 0.8em; padding: 5px 1em 2px 0em;  text-align: left;border-bottom: black 2px solid;}
+.modbus tr:first-child td:nth-child(6) {min-width: 4em;}
+.modbus tr:first-child td:nth-child(7) {min-width: 5em;}
+.modbus tr:first-child td:nth-child(2) {min-width: 12em;}
+.modbus tr td:first-child {font-style: italic; font-size: .8em;}
+
+.modbus table {border-spacing: 0}
+
+.modbus select {
+    -webkit-appearance: none;
+    padding: 1px .5em;
+    font-size: .8em;
+    font-style: italic;
+    border: none;
+}
+
+
+.modbus button {
+    font-size: .7em;
+    margin: 5px;
+    padding: 3px 5px 3px 5px;
+    text-transform: none;
+    width: auto;
+    font-weight: 300;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.redButton {
+    color: #ff4400;
+    border-color: #ff4400;
+}
+
+.card {
+    border-color: #0098d9;
+    box-shadow: 0 10px 13px 0 rgba(42, 134, 243, .3), 0 0 13px 0 rgba(42, 134, 243, .18), 30px 30px 30px 0 rgba(0, 0, 0, .3);
+    padding: 60px 30px 30px 30px;
+    background-color: white;
+    border-radius: 20px;
+    transition-duration: 2s;
+}
+
+.ok_block {
+    justify-content: center;
+    vertical-align: center;
+    background: #00d91d;
+    color: white;
+    position: absolute;
+    margin: 0px;
+    padding: 10px 25px 10px 25px;
+    font-weight: 800;
+    font-size: 1em;
+    top: -5em;
+    transition-duration: 1s;
+    opacity: .95;
+
+}
+
